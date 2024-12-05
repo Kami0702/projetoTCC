@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="imagem/png" href="https://cdn-icons-png.flaticon.com/512/1161/1161388.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Pedidos</title>
+</head>
+<body>
+    <style>
+     
+     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        body{
+         background-color: #ffffff;}
+
+        .nav-side-menu {
+  overflow: auto;
+  font-family:Verdana;
+  font-size: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.146);
+  font-weight: 200;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0px;
+  width: 300px;
+  border-radius: 15px;
+  height: 100%;
+  color: #02c768;
+}
+.nav-side-menu .brand {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.051);
+  line-height: 50px;
+  display: block;
+  font-family: 'Bebas Neue' , cursive;
+  text-align: center;
+  font-size: 25px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+    
+    .collapsed{
+      .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                
+            }
+     }
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #076738;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.042);
+  background-color: #f4f4f4;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #c57777;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #3fd400;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #fcfcfc;
+ 
+  line-height: 28px;
+
+  border-bottom: 1px solid #ffffff00;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #e1e1e1;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  color:rgb(217, 217, 217);
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #3d4b5c00;
+  border-bottom: 2px solid #dbdbdb00;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: hsl(139, 90%, 38%);
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 5px solid #00af26;
+  background-color: #ffffff;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #37d15b00;
+    color: #d70505bf;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.barra-pesquisa{
+    display: flex;
+  }
+  
+  #img-barra-pesquisa{
+    width: 20px;
+    height: 20px;margin-left: 5px;
+    margin-top: 19px;
+  }
+  
+  #barra-pesquisa{
+    margin-left: 600px;
+    margin-top: 13px;
+    padding: 8px;
+    background-color: rgb(245, 245, 245);
+    padding-left: 15px;
+    width: 500px;
+    box-shadow: 0px 0px 5px rgba(213, 213, 213, 0.398);
+    height: 20px;
+    margin-bottom: 10px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border: 0px solid rgba(0, 0, 0, 0);
+  }
+    </style>
+
+    <!--Created by- https://bootsnipp.com/ishwarkatwe-->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="nav-side-menu">
+    <div class="brand">stocksecurity </div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="home.html">
+                  <i class="fa fa-home fa-lg"></i> painel de controle
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <a href="estoque.html"><i class="fa fa-solid fa-bar-chart fa-lg"></i> acompanhamentos </a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    
+                    <li><a href="#">geral</a></li>
+                    <li><a href="#">estoque</a></li>
+                    <li><a href="#">fúncionários</a></li>
+                    <li><a href="#">configurações</a></li>
+                    <li><a href="#">criação de pedido</a></li>
+                    <li><a href="#">cancelados</a></li>
+                    <li><a href="#">estoque anual</a></li>
+                    <li><a href="#">metas batidas</a></li>
+                    <li><a href="#">painel 2</a></li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                  <a href="#"><i class="fa fa-link fa-lg"></i> Serviços </a>
+                </li>  
+                <ul class="sub-menu collapse" id="service">
+                  <li>suporte</li>
+                  <li>tutoriais</li>
+                  <li>chat direto</li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <a href="#"><i class="fa fa-lock fa-lg"></i> Segurança</a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                  <li>Troca de senhas</li>
+                  <li>Troca de logins</li>
+                  <li>Acesso aos dados</li>
+                </ul>
+
+
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-user fa-lg"></i> Profile
+                  </a>
+                  </li>
+
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-users fa-lg"></i> Users
+                  </a>
+                </li>
+            </ul>
+     </div>
+</div>
+
+<center>
+    <div class="barra-pesquisa">
+          
+        <input id="barra-pesquisa" type="text" placeholder="pesquise no sistema...">
+        <img id="img-barra-pesquisa" src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-vert.png" alt="botao-pesquisa">
+        
+      </div>
+</center>
+<div class="ggi">
+<section>
+    <article class="card">
+      <div class="card__img__container">
+        <img class="card__img" src="img/undraw_coffee_break_h3uu.png">
+      </div>
+      <div class="card__content">
+        <h1 class="card__title">pedido #0966r79e</h1>
+        <p class="card__desc">Os pedidos de EPI (Equipamentos de Proteção Individual) são fundamentais para garantir a segurança dos trabalhadores em diversos ambientes</p>
+  
+        <div class="plan__info">
+          
+          <div class="plan__detail">
+            <h2 class="plan__title">info</h2>
+            <p class="plan__price">Nº atribuição #0966r79e</p>
+          </div>
+          <button class="btn plan__btn">Checagem</button>
+        </div>
+  
+        <button class="btn pay__btn"><a  href="aprovação.html" style="color: #ffffff;text-decoration: none">AUTORIZAR</a></button>
+        <button class="btn cancel__btn">CANCELAR</button>
+      </div>
+    </article>
+<br><br><br>
+    <article class="card">
+      <div class="card__img__container">
+        <img class="card__img" src="img/undraw_coffee_break_h3uu.png">
+      </div>
+      <div class="card__content">
+        <h1 class="card__title">pedido #5653168jgcg</h1>
+        <p class="card__desc">Os pedidos de EPI (Equipamentos de Proteção Individual) são fundamentais para garantir a segurança dos trabalhadores em diversos ambientes</p>
+  
+        <div class="plan__info">
+          
+          <div class="plan__detail">
+            <h2 class="plan__title">info</h2>
+            <p class="plan__price">Nº atribuição #5653168jgcg</p>
+          </div>
+          <button class="btn plan__btn">Checagem</button>
+        </div>
+  
+        <button class="btn pay__btn"><a  href="erhq4t copy.html" style="color: #ffffff;text-decoration: none">AUTORIZAR</a></button>
+        <button class="btn cancel__btn">CANCELAR</button>
+      </div>
+    </article>
+<br><br><br>
+    <article class="card">
+      <div class="card__img__container">
+        <img class="card__img" src="img/undraw_coffee_break_h3uu.png">
+      </div>
+      <div class="card__content">
+        <h1 class="card__title">pedido #0966r79e</h1>
+        <p class="card__desc">Os pedidos de EPI (Equipamentos de Proteção Individual) são fundamentais para garantir a segurança dos trabalhadores em diversos ambientes</p>
+  
+        <div class="plan__info">
+          
+          <div class="plan__detail">
+            <h2 class="plan__title">info</h2>
+            <p class="plan__price">Nº atribuição #0966r79e</p>
+          </div>
+          <button class="btn plan__btn">Checagem</button>
+        </div>
+  
+        <button class="btn pay__btn"><a  href="erhq4t copy.html" style="color: #ffffff;text-decoration: none">AUTORIZAR</a></button>
+        <button class="btn cancel__btn">CANCELAR</button>
+      </div>
+    </article>
+<br><br>
+    <article class="card">
+      <div class="card__img__container">
+        <img class="card__img" src="img/undraw_coffee_break_h3uu.png">
+      </div>
+      <div class="card__content">
+        <h1 class="card__title">pedido #0966r79e</h1>
+        <p class="card__desc">Os pedidos de EPI (Equipamentos de Proteção Individual) são fundamentais para garantir a segurança dos trabalhadores em diversos ambientes</p>
+  
+        <div class="plan__info">
+          
+          <div class="plan__detail">
+            <h2 class="plan__title">info</h2>
+            <p class="plan__price">Nº atribuição #0966r79e</p>
+          </div>
+          <button class="btn plan__btn">Checagem</button>
+        </div>
+  
+        <button class="btn pay__btn"><a  href="erhq4t copy.html" style="color: #ffffff;text-decoration: none">AUTORIZAR</a></button>
+        <button class="btn cancel__btn">CANCELAR</button>
+      </div>
+    </article>
+
+    <br><br>
+</section>
+  </div>
+<br><br><br>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+/* general styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+img {
+  width: 400px;
+  margin-left: 150px;
+  display: block;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 1em;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 0.9rem;
+}
+
+/* separate styling */
+main{
+    display: flex;
+}
+.card {
+  margin-left: 400px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 800px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 1em 1em 3em rgba(0, 0, 0, 0.168);
+  background-color: #fff;
+  transition: transform 300ms ease;
+}
+
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card__img__container {
+  max-width: 100%;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  
+}
+
+.card__title {
+  margin-top: 0.5em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: hsl(152, 77%, 22%);
+  font-weight: 900;
+}
+
+.card__desc {
+  margin: 1em 1.5em 1.5em;
+  line-height: 1.5em;
+}
+
+.plan__info {
+  display: flex;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 1em;
+  background-color: hsl(225, 100%, 98%);
+}
+
+.plan__icon {
+  height: 100%;
+}
+
+.plan__detail {
+  margin-left: 1.25em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: start;
+}
+
+.plan__title {
+  margin-bottom: 0.25em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: hsl(144, 47%, 23%);
+  font-size: 0.9rem;
+}
+
+.plan__btn {
+  position: absolute;
+  right: 1.5em;
+  text-decoration: none;
+  color: hsl(139, 75%, 52%);
+  background-color: transparent;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.plan__btn:hover {
+  color: hsl(117, 75%, 70%);
+  text-decoration: none;
+}
+
+.pay__btn {
+  padding: 1.25em 2em;
+  box-shadow: 0 0.5em 2em hsla(245, 75%, 52%, 0.4);
+  color: #fff;
+  background-color: hsl(161, 91%, 35%);
+  font-weight: 700;
+}
+
+.pay__btn:hover {
+  background-color: hsl(149, 56%, 33%);
+}
+
+.cancel__btn {
+  padding: 1em 2em;
+  margin-top: 1em;
+  color: hsl(224, 23%, 55%);
+  background-color: transparent;
+  font-weight: 700;
+}
+
+.cancel__btn:hover {
+  color: hsl(223, 47%, 23%);
+}
+body{
+  background: url(img/undraw_coffee_break_h3uu.png);
+  background-size: 1000%;
+}
+/* attribution styling */
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.9;
+}
+
+.attribution a {
+  color: hsl(245, 75%, 52%);
+  text-decoration: underline;
+}
+
+.attribution a:hover {
+  color: hsl(245, 75%, 70%);
+}
+
+@media (min-width: 600px) {
+  body {
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+</style>
+</body>
+</html>

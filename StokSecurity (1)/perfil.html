@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perfil</title>
+</head>
+<body>
+    <style>
+
+   
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        body{
+         background-color: #ffffff;}
+
+        .nav-side-menu {
+  overflow: auto;
+  font-family:Verdana;
+  font-size: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.146);
+  font-weight: 200;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0px;
+  width: 300px;
+  border-radius: 15px;
+  height: 100%;
+  color: #02c768;
+}
+.nav-side-menu .brand {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.051);
+  line-height: 50px;
+  display: block;
+  font-family: 'Bebas Neue' , cursive;
+  text-align: center;
+  font-size: 25px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+    
+    .collapsed{
+      .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                
+            }
+     }
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #076738;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.042);
+  background-color: #f4f4f4;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #c57777;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #3fd400;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #fcfcfc;
+ 
+  line-height: 28px;
+
+  border-bottom: 1px solid #ffffff00;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #e1e1e1;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  color:rgb(217, 217, 217);
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #3d4b5c00;
+  border-bottom: 2px solid #dbdbdb00;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: hsl(139, 90%, 38%);
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 5px solid #00af26;
+  background-color: #ffffff;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #37d15b00;
+    color: #d70505bf;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.barra-pesquisa{
+    display: flex;
+  }
+  
+  #img-barra-pesquisa{
+    width: 20px;
+    height: 20px;margin-left: 5px;
+    margin-top: 19px;
+  }
+  
+  #barra-pesquisa{
+    margin-left: 600px;
+    margin-top: 13px;
+    padding: 8px;
+    background-color: rgb(245, 245, 245);
+    padding-left: 15px;
+    width: 500px;
+    box-shadow: 0px 0px 5px rgba(213, 213, 213, 0.398);
+    height: 20px;
+    margin-bottom: 10px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border: 0px solid rgba(0, 0, 0, 0);
+  }
+    </style>
+
+    <!--Created by- https://bootsnipp.com/ishwarkatwe-->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="nav-side-menu">
+    <div class="brand">stocksecurity </div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="home.html">
+                  <i class="fa fa-home fa-lg"></i> painel de controle
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <a href="#"><i class="fa fa-solid fa-bar-chart fa-lg"></i> acompanhamentos </a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    
+                    <li><a href="#">perfil</a></li>
+                    <li><a href="#">estoque</a></li>
+                    <li><a href="#">fúncionários</a></li>
+                    <li><a href="#">configurações</a></li>
+                    <li><a href="#">criação de pedido</a></li>
+                    <li><a href="#">cancelados</a></li>
+                    <li><a href="#">estoque anual</a></li>
+                    <li><a href="#">metas batidas</a></li>
+                    <li><a href="#">painel 2</a></li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                  <a href="#"><i class="fa fa-link fa-lg"></i> Serviços </a>
+                </li>  
+                <ul class="sub-menu collapse" id="service">
+                  <li>suporte</li>
+                  <li>tutoriais</li>
+                  <li>chat direto</li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <a href="#"><i class="fa fa-lock fa-lg"></i> Segurança</a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                  <li>Troca de senhas</li>
+                  <li>Troca de logins</li>
+                  <li>Acesso aos dados</li>
+                </ul>
+
+
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-user fa-lg"></i> Profile
+                  </a>
+                  </li>
+
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-users fa-lg"></i> Users
+                  </a>
+                </li>
+            </ul>
+     </div>
+</div>
+
+<center>
+    <div class="barra-pesquisa">
+          
+        <input id="barra-pesquisa" type="text" placeholder="pesquise no sistema...">
+        <img id="img-barra-pesquisa" src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-vert.png" alt="botao-pesquisa">
+        
+      </div>
+</center>
+
+<div class="dp">
+    <div class="dn1">
+    <img src="https://visafoto.com/img/4x4-cm-passport-photo-example.jpg" alt="">
+    <img id="img-barra-pesquisa" src="https://cdn-icons-png.flaticon.com/512/5996/5996708.png" alt="botao-pesquisa">
+    <h1>Kamila Fernandes Souza</h1>
+    <h3>desenvolvimento</h1>
+    <h2>Nº Matricula: <span>2.352.54-45</span></h2>
+    <h4>Registro:252353413  </h2>
+        <strong>Registro:</strong> <h2>#5485fd3254mf2</h2><br>
+              <strong>E-mail:</strong> <h2>marialice@paranoa.emp.com</h2><br><strong>telefone</strong>
+(11)1159185865
+    </div>
+    <img class="img-1" src="img/undraw_Co-working_re_w93t.png" alt=""> 
+  </div>
+
+  <style>
+    .dn1{
+        background-color: #f1f1f1(146, 73%, 64%, 0.758);
+      padding: 10px;
+        border-radius: 30px;
+        margin:10px;
+        margin-left: 370px;
+        width: 450px;
+       margin-bottom: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.238);
+    
+        
+    }
+    
+    .dn1 img{
+        border-radius: 100%;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+        
+    }
+    
+    .dn1 h1{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 50px;
+        font-size: 20px;
+        color: #2a714ebd;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    .dn1 h3{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 50px;
+        font-size: 15px;
+        margin-top: 0px;
+        color: #07bb67;
+        
+    }
+    
+    .dn1 h2{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 50px;
+        color: #00000060;
+        font-size: 15px;
+        margin-bottom: 0;
+        
+    }
+    .dn1 strong{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 50px;
+        color: #00000060;
+        font-size: 15px;
+        margin-bottom: 0;
+        
+    }
+    .dn1 h4{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 50px;
+        font-size: 15px;
+        color: #00000060;
+        margin-top: 0;
+       
+        
+    }
+    
+    .smt{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.238);
+      background-color: white;
+      width: 400px;
+      margin-left: 700px;
+      padding: 20px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+    }
+    
+    .smt img{
+      width: 350px;
+      height: 200px;
+      
+    }
+    .smt p{
+      font-size: 40px;
+      color:#00a058;
+      margin-left: 100px;
+      
+      font-family: 'bebas neue';
+    }
+    
+    .smt a{
+      text-decoration: none;
+      color: #00000060;
+     
+    }
+    
+    .smt h1{
+      font-size: 20px;
+      text-decoration: none;
+      margin-left: 50px;
+      color: #00000060;
+    
+    }
+      
+        .btn{
+            background-color: #00a058;
+            border-color:green;
+            padding: 5px;
+            border-radius: 5px;
+          
+            align-items: center;
+    
+        }
+    
+        .btn-primary:hover{
+            background-color: #40c88b;
+            border: #00b161;
+        }
+    
+        .ajuste{
+           
+            align-self: center;
+            align-items: center;
+        }
+    
+        .dn1 #img-barra-pesquisa{
+          width: 30px;
+          height: 30px;
+          border: 0px;
+          border-radius: 0;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+     
+        }
+    
+        .img-1{
+          width: 420px;
+          height: 350px;
+         display: flex;
+         margin: 10px;
+          
+        }
+    
+        .dp{
+          display: flex;
+        }
+       
+       .img-2{
+        width: 180px;
+        margin-left: 50px;
+       }
+    </style>
+
+</body>
+</html>
